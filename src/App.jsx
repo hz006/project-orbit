@@ -158,12 +158,10 @@ function App() {
 
   const [schedule, setSchedule] = useState(initialSchedule);
 
-  const [goals, setGoals] = useState(starterGoals);
+  const [goals, setGoals] = useState([]);
   const [preferences, setPreferences] = useState([]);
 
-  const [goalInput, setGoalInput] = useState(
-    "I want to finish Project Orbit by Thursday, go to the gym around three times a week, post more consistently, and I usually have more energy later in the day.",
-  );
+  const [goalInput, setGoalInput] = useState("");
 
   const [goalSummary, setGoalSummary] = useState("");
   const [isBuildingContext, setIsBuildingContext] =
@@ -185,6 +183,27 @@ function App() {
 
   const [recalibrated, setRecalibrated] =
     useState(false);
+
+  const resetDemo = () => {
+    setSchedule(initialSchedule);
+    setGoals([]);
+    setPreferences([]);
+    setGoalInput("");
+    setGoalSummary("");
+    setGoalError("");
+    setIsBuildingContext(false);
+
+    setMessage("");
+    setOriginalMessage("");
+    setOrbitoResult(null);
+    setOrbitoError("");
+    setIsLoading(false);
+
+    setRecalibrated(false);
+
+    setActivePage("home");
+    setScheduleView("week");
+  };
 
   /*
   =========================================================
@@ -478,6 +497,13 @@ function App() {
             }
           >
             ✦ Orbito
+          </button>
+
+          <button
+            className="nav-item"
+            onClick={resetDemo}
+          >
+            ↻ Reset Demo
           </button>
         </nav>
       </aside>
