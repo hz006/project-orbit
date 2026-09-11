@@ -163,30 +163,35 @@ Structured planning context
                 │
                 ▼
        Updated schedule
-Technology
-Frontend
-React
-Vite
-JavaScript
-CSS
-Backend
-Node.js
-Express
-Google
-Google Gemini
-Gemini Interactions API
-gemini-flash-lite-latest
+```
+
+## Technology
+
+### Frontend
+- React
+- Vite
+- JavaScript
+- CSS
+
+### Backend
+- Node.js
+- Express
+
+### Google
+- Google Gemini
+- Gemini Interactions API
+- gemini-flash-lite-latest
 
 Gemini is used as Orbit's natural-language goal and preference understanding layer.
 
-NVIDIA
-NVIDIA Nemotron
-NVIDIA hosted inference API
-nvidia/nemotron-3.5-lightning-30b-a3b
+### NVIDIA
+- NVIDIA Nemotron
+- NVIDIA hosted inference API
+- nvidia/nemotron-3.5-lightning-30b-a3b
 
 Nemotron is used as Orbito's life-update and schedule-recalibration reasoning layer.
 
-Grounded AI design
+## Grounded AI design
 
 Orbit intentionally does not let the language model directly rewrite the schedule without validation.
 
@@ -194,28 +199,28 @@ The backend checks model recommendations against trusted application state.
 
 For task status changes, Orbit verifies:
 
-the task exists in the current schedule,
-the model provides evidence,
-that evidence appears in the user's actual message.
+1. the task exists in the current schedule,
+2. the model provides evidence,
+3. that evidence appears in the user's actual message.
 
 For schedule moves, Orbit verifies:
 
-the source task exists,
-the source day and time are correct,
-the destination is an actual open block,
-fixed commitments are protected.
+1. the source task exists,
+2. the source day and time are correct,
+3. the destination is an actual open block,
+4. fixed commitments are protected.
 
 This helps reduce hallucinated schedule changes.
 
-Alternate-plan behavior
+## Alternate-plan behavior
 
-Orbit also supports Try another plan.
+Orbit also supports **Try another plan**.
 
 If the user does not like the first recommended time, Orbito can generate another recommendation.
 
 The previous destination is removed from the allowed set before the next model request, helping prevent the model from simply repeating the same plan.
 
-Product philosophy
+## Product philosophy
 
 Orbit is based on a simple idea:
 
@@ -225,33 +230,35 @@ Rest, health, creative work, school, career goals, and personal priorities all c
 
 Orbit is designed to help people make those tradeoffs more consciously while keeping the user in control.
 
-Demo flow
-Open Goals
-Describe goals and planning preferences naturally
-Click Build my Orbit
-Google Gemini creates structured planning context
-Open Orbito
-Explain what changed
-NVIDIA Nemotron interprets the update
-Orbit validates a schedule adjustment
-Click Recalibrate my Orbit
-See the schedule visibly update
-Project status
+## Demo flow
+1. Open **Goals**
+2. Describe goals and planning preferences naturally
+3. Click **Build my Orbit**
+4. Google Gemini creates structured planning context
+5. Open **Orbito**
+6. Explain what changed
+7. NVIDIA Nemotron interprets the update
+8. Orbit validates a schedule adjustment
+9. Click **Recalibrate my Orbit**
+10. See the schedule visibly update
+
+## Project status
 
 Project Orbit is currently a working prototype built for the Google Cloud × NVIDIA Golden Ticket challenge.
 
 Future directions could include:
 
-calendar integrations
-persistent user accounts
-automatically generated schedules
-recurring routines
-multi-day planning
-notifications
-long-term goal tracking
-richer preference learning
-mobile experiences
-Built by
+- calendar integrations
+- persistent user accounts
+- automatically generated schedules
+- recurring routines
+- multi-day planning
+- notifications
+- long-term goal tracking
+- richer preference learning
+- mobile experiences
+
+## Built by
 
 Hazel
 University of Washington
